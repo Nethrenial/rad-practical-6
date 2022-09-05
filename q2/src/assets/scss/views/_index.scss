@@ -1,0 +1,131 @@
+@use "../abstracts/mixins" as *;
+
+.home {
+  margin-top: calc(2 * var(--header-height));
+  min-height: calc(100vh - 2 * var(--header-height));
+
+  @include mq(md) {
+    margin-top: var(--header-height);
+    min-height: calc(100vh - var(--header-height));
+  }
+
+  h1 {
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+
+    @include mq(md) {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.gallery {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq(lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mq(xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include mq(2xl) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__item {
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      border-radius: 1rem;
+    }
+
+    p {
+      font-weight: 600;
+      margin-top: 1rem;
+      position: absolute;
+      top: -0.5rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      bottom: 0.5rem;
+      background-color: #000;
+      border-radius: 1rem;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-align: center;
+      font-size: 2.2rem;
+      padding: 1rem;
+    }
+
+    &:hover {
+      p {
+        opacity: 0.7;
+        font-size: 2rem;
+      }
+    }
+
+    &--add {
+      background-color: #e5e5e5;
+      display: grid;
+      place-items: center;
+      font-size: 10rem;
+      margin: 0.5rem;
+      font-weight: lighter;
+      transition: all 0.3s ease-in-out;
+      border-radius: 1rem;
+      grid-column-start: 1;
+
+      &#plus-btn {
+        color: #777;
+      }
+
+      &:hover {
+        background-color: #ddd;
+        &#plus-btn {
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.no-images {
+  display: grid;
+  place-items: center;
+  height: 60vh;
+
+  img {
+    max-width: 600px;
+  }
+
+  a {
+    margin-top: 2rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

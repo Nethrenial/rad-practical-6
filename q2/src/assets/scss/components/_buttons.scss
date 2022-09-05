@@ -1,0 +1,17 @@
+.action-btn {
+  outline: 0;
+  border: 0;
+  background-color: rgb(var(--clr-primary));
+  color: #fff;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem;
+  box-shadow: 5px 5px 15px 5px rgb(var(--clr-primary), 0);
+}
+
+.action-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 15px 2px rgb(var(--clr-primary), 0.4);
+}

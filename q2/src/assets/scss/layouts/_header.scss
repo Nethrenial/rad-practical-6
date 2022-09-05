@@ -1,0 +1,75 @@
+@use "../abstracts/mixins" as *;
+
+:root {
+  --header-height: 50px;
+}
+
+.default-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--header-height) * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  background-color: #fff;
+  z-index: 1;
+
+  @include mq(md) {
+    flex-direction: row;
+    height: var(--header-height);
+  }
+
+  .brand {
+    font-family: "Satisfy", cursive;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      height: 80%;
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .user-email {
+    display: none;
+  }
+
+  @media screen and (min-width: 450px) {
+    .user-email {
+      display: block;
+    }
+  }
+}
+
+.auth-btn {
+  background-color: var(--clr-primary-hex);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 20px 3px rgba($color: #000000, $alpha: 0);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 2px 2px 20px 3px rgba(var(--clr-primary), 0.3);
+  }
+}
+
+a.auth-btn {
+  color: #fff;
+}

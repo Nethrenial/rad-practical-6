@@ -1,0 +1,13 @@
+:root {
+  --clr-primary: 123, 0, 255;
+  --clr-primary-hex: #7b00ffff;
+}
+
+$breakpoints: (
+  "xs": 440px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "2xl": 1400px,
+);
