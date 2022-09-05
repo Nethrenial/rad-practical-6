@@ -1,0 +1,29 @@
+@use "../abstracts/mixins" as *;
+
+.home {
+  margin-top: calc(2 * var(--header-height));
+  min-height: calc(100vh - 2 * var(--header-height));
+
+  display: grid;
+  place-items: center;
+
+  @include container;
+
+  @include mq(md) {
+    margin-top: var(--header-height);
+    min-height: calc(100vh - var(--header-height));
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: center;
+    margin: 1rem;
+
+    span {
+      font-size: 1rem;
+      font-weight: lighter;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}

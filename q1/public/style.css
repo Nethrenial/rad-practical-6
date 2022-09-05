@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: 123, 0, 255;
+  --color-primary-hex: #7b00ffff;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  color: rgb(var(--color-primary));
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a:visited {
+  color: rgba(var(--color-primary), 0.7);
+}
+
+.login-container {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1400px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container__bg {
+  width: 50vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .login-container__bg {
+    /* width: 50vw; */
+    display: none;
+  }
+}
+
+.login-container__bg {
+  width: 50vw;
+}
+
+.login-container__bg-image {
+  width: 100%;
+}
+
+.login-container__info {
+  width: 99%;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .login-container__info {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .login-container__info {
+    padding: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .login-container__info {
+    padding: 4rem;
+  }
+
+  .login-container {
+    width: 80vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .login-container__info {
+    width: 50vw;
+    padding: 6rem;
+  }
+}
+
+.login-container__info-heading {
+  color: #777;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.login-container__info-heading span {
+  color: #222;
+  font-size: 3rem;
+}
+
+.login-container__info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.login-container__info-additional {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .login-container__info-additional {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.form-item input {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+}
+
+.form-item input:focus {
+  outline: 2px solid rgb(var(--color-primary));
+}
+
+.form-item__label {
+  position: absolute;
+  top: 1.5rem;
+  transform: translateY(-50%) translateX(1rem);
+  transition: ALL 0.3s ease-in-out;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+.form-item.error input {
+  border: 1px solid red;
+}
+
+.form-item.error li {
+  color: red;
+  font-size: 0.6rem;
+  padding-left: 0.5rem;
+}
+
+.form-item--check {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-item--check input {
+  height: 24px;
+  width: 24px;
+  accent-color: rgb(var(--color-primary));
+  cursor: pointer;
+}
+
+.form-item input:focus + .form-item__label,
+.form-item input:not(:placeholder-shown) + .form-item__label {
+  top: -1.4rem;
+  transform: translate(1rem, 0);
+  font-weight: 600;
+}
+
+.form-item input:-webkit-autofill + label,
+.form-item input:-webkit-autofill:hover + label,
+.form-item input:-webkit-autofill:focus + label,
+.form-item input:-webkit-autofill:active + label {
+  top: -1.4rem;
+  transform: translate(1rem, 0);
+  font-weight: 600;
+}
+
+.action-btn {
+  outline: 0;
+  border: 0;
+  background-color: rgb(var(--color-primary));
+  color: #fff;
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem;
+  box-shadow: 5px 5px 15px 5px rgb(var(--color-primary), 0);
+}
+
+.action-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 15px 2px rgb(var(--color-primary), 0.4);
+}
+
+.default-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+
+
+.brand {
+  color: rgb(var(--color-primary));
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-buttons a {
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.logout-btn {
+  background-color: var(--color-primary-hex);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-buttons a:hover, .auth-buttons a:focus, .auth-buttons a:active {
+  background-color: var(--color-primary-hex);
+  color: #fff;
+}
+
+.home {
+  margin-top: 60px;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+}
+
+.home p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.home p span {
+  font-size: 1rem;
+  color: #666;
+}

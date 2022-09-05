@@ -1,0 +1,88 @@
+@use "../abstracts/mixins" as *;
+
+.upload {
+  margin-top: calc(2 * var(--header-height));
+  min-height: calc(100vh - 2 * var(--header-height));
+
+  @include mq(md) {
+    margin-top: var(--header-height);
+    min-height: calc(100vh - var(--header-height));
+  }
+  h1 {
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 1;
+
+    @include mq(md) {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.upload__container {
+  @include container;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mq(lg) {
+    flex-direction: row;
+  }
+
+  &-preview {
+    width: 100%;
+    display: grid;
+    place-items: center;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  &-info {
+    width: 100%;
+    padding: 1rem;
+
+    @include mq(sm) {
+      padding: 2rem;
+    }
+
+    @include mq(md) {
+      padding: 3rem;
+    }
+
+    @include mq(lg) {
+      padding: 4rem;
+    }
+
+    @include mq(xl) {
+      padding: 6rem;
+    }
+  }
+}
+
+.upload__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.preview-bottom {
+  @include mq(lg) {
+    display: none;
+  }
+}
+
+.preview-top {
+  display: none;
+
+  @include mq(lg) {
+    display: block;
+  }
+}
